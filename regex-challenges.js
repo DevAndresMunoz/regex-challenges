@@ -85,7 +85,14 @@ const validateDate = (input) => {
 
 // Count Vowels
 // Example: "hello" -> 2; "xyz" -> 0
-const countVowels = () => {};
+const countVowels = (input) => {
+	if (typeof input !== 'string') {
+		throw new Error('Input must be a string!');
+	}
+	const regex = /a|e|i|o|u/ig
+	const result = input.match(regex);
+	return result ? result.length : 0;
+};
 
 // Extract Domain Names
 // Example: "test@example.com" -> "example.com"; "invalid" -> null
@@ -140,7 +147,7 @@ module.exports = {
     extractHexColors,
     validateUrl,
     validateDate,
-    // countVowels,
+    countVowels,
     // extractDomain,
     // matchHtmlTags,
     // findCapitalizedWords,

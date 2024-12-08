@@ -75,11 +75,13 @@ describe('Regex Challenges', () => {
         //function works for future dates, will refactor once I'm done with other functions
     });
 
-    // test('Count vowels', () => {
-    //     expect(countVowels('hello')).toBe(2);
-    //     expect(countVowels('HELLO')).toBe(2); // Case-insensitivity check
-    //     expect(countVowels('xyz')).toBe(0);
-    // });
+    test('Count vowels', () => {
+        expect(countVowels('hello')).toBe(2);
+        expect(countVowels('HELLO')).toBe(2); // Case-insensitivity check
+        expect(countVowels('xyz')).toBe(0);
+        expect(() => matchJavaScript(123)).toThrow('Input must be a string!');
+
+    });
 
     // test('Extract domain names', () => {
     //     expect(extractDomain('test@example.com')).toBe('example.com');
