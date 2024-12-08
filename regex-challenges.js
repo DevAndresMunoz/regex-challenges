@@ -1,6 +1,12 @@
 // Match a Specific Word
 // Example: "I love JavaScript" -> true; "I love javascript" -> false
-const matchJavaScript = () => {};
+const matchJavaScript = (input) => {
+	if (typeof input !== 'string') {
+		throw new Error('Input must be a string!');
+	}
+	const regex = /JavaScript/;
+	return regex.test(input);
+};
 
 // Validate Email Address
 // Example: "test@example.com" -> true; "invalid-email" -> false
@@ -79,24 +85,24 @@ const checkMultilineStart = () => {};
 const validateUSAddress = () => {};
 
 module.exports = {
-  matchJavaScript,
-  validateEmail,
-  extractNumbers,
-  replaceWhitespace,
-  validatePhoneNumber,
-  extractHexColors,
-  validateUrl,
-  validateDate,
-  countVowels,
-  extractDomain,
-  matchHtmlTags,
-  findCapitalizedWords,
-  matchRepeatedWords,
-  validatePassword,
-  matchUnicodeChars,
-  validateCreditCard,
-  replaceNonWordChars,
-  splitByDelimiters,
-  checkMultilineStart,
-  validateUSAddress,
+    matchJavaScript,
+    // validateEmail,
+    // extractNumbers,
+    // replaceWhitespace,
+    // validatePhoneNumber,
+    // extractHexColors,
+    // validateUrl,
+    // validateDate,
+    // countVowels,
+    // extractDomain,
+    // matchHtmlTags,
+    // findCapitalizedWords,
+    // matchRepeatedWords,
+    // validatePassword,
+    // matchUnicodeChars,
+    // validateCreditCard,
+    // replaceNonWordChars,
+    // splitByDelimiters,
+    // checkMultilineStart,
+    // validateUSAddress,
 };
