@@ -24,8 +24,8 @@ const validateEmail = (input) => {
 // Example: "abc123def456" -> ["123", "456"]; "no numbers" -> []
 const extractNumbers = (input) => {
 	const regex = /\d+/g
-	const matches = input.match(regex)
-	return matches ? matches: [];
+	const result = input.match(regex)
+	return result ? result: [];
 };
 
 // Replace Whitespace
@@ -63,7 +63,14 @@ const extractHexColors = (input) => {
 
 // Validate URL
 // Example: "https://example.com" -> true; "ftp://example.com" -> false
-const validateUrl = () => {};
+const validateUrl = (input) => {
+	if (typeof input !== 'string') {
+		throw new Error('Input must be a string!');
+	}
+	const regex = /https\:\/\/\w+(\.com)$/i
+	const result = regex.test(input);
+	return result;
+};
 
 // Validate Dates
 // Example: "12/25/2023" -> true; "25/12/2023" -> false
@@ -124,7 +131,7 @@ module.exports = {
     replaceWhitespace,
     validatePhoneNumber,
     extractHexColors,
-    // validateUrl,
+    validateUrl,
     // validateDate,
     // countVowels,
     // extractDomain,
