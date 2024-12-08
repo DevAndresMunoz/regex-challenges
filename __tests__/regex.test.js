@@ -53,10 +53,12 @@ describe('Regex Challenges', () => {
         expect(() => matchJavaScript(123)).toThrow('Input must be a string!');
     });
 
-    // test('Extract hexadecimal colors', () => {
-    //     expect(extractHexColors('Colors: #FF5733, #fff, and #123abc')).toEqual(['#FF5733', '#fff', '#123abc']);
-    //     expect(extractHexColors('no colors')).toEqual([]);
-    // });
+    test('Extract hexadecimal colors', () => {
+        expect(extractHexColors('Colors: #FF5733, #fff, and #123abc')).toEqual(['#FF5733', '#fff', '#123abc']);
+        expect(extractHexColors('no colors')).toEqual([]);
+        expect(() => matchJavaScript(123)).toThrow('Input must be a string!');
+
+    });
 
     // test('Validate URL', () => {
     //     expect(validateUrl('https://example.com')).toBe(true);
