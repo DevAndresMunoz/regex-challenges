@@ -52,7 +52,14 @@ const validatePhoneNumber = (input) => {
 
 // Extract Hexadecimal Colors
 // Example: "Colors: #FFF, #123ABC" -> ["#FFF", "#123ABC"]; "no colors" -> []
-const extractHexColors = () => {};
+const extractHexColors = (input) => {
+	if (typeof input !== 'string') {
+		throw new Error('Input must be a string!');
+	}
+	const regex = /#?([\da-f]{3})?([\da-f]{3})/ig
+	const result = input.match(regex);
+	return result ? result : [];
+};
 
 // Validate URL
 // Example: "https://example.com" -> true; "ftp://example.com" -> false
@@ -116,7 +123,7 @@ module.exports = {
     extractNumbers,
     replaceWhitespace,
     validatePhoneNumber,
-    // extractHexColors,
+    extractHexColors,
     // validateUrl,
     // validateDate,
     // countVowels,
