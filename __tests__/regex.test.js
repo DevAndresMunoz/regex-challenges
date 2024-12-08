@@ -40,10 +40,12 @@ describe('Regex Challenges', () => {
         expect(extractNumbers('No numbers here')).toEqual([]);
     });
 
-    // test('Replace whitespace', () => {
-    //     expect(replaceWhitespace('Hello World')).toBe('Hello_World');
-    //     expect(replaceWhitespace('multiple   spaces')).toBe('multiple_spaces');
-    // });
+    test('Replace whitespace', () => {
+        expect(replaceWhitespace('Hello World')).toBe('Hello_World');
+        expect(replaceWhitespace('multiple   spaces')).toBe('multiple_spaces');
+        expect(() => matchJavaScript(123)).toThrow('Input must be a string!');
+
+    });
 
     // test('Validate phone number', () => {
     //     expect(validatePhoneNumber('(123) 456-7890')).toBe(true);

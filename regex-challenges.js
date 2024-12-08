@@ -28,7 +28,14 @@ const extractNumbers = (input) => {
 
 // Replace Whitespace
 // Example: "Hello World" -> "Hello_World"; "a b c" -> "a_b_c"
-const replaceWhitespace = () => {};
+const replaceWhitespace = (input) => {
+	if (typeof input !== 'string') {
+		throw new Error('Input must be a string!');
+	}
+	const regex = /\s+/g;
+	const result = input.replace(regex, '_');
+	return result;
+};
 
 // Validate Phone Number
 // Example: "(123) 456-7890" -> true; "123-456-7890" -> false
@@ -98,7 +105,7 @@ module.exports = {
     matchJavaScript,
     validateEmail,
     extractNumbers,
-    // replaceWhitespace,
+    replaceWhitespace,
     // validatePhoneNumber,
     // extractHexColors,
     // validateUrl,
