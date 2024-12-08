@@ -5,7 +5,8 @@ const matchJavaScript = (input) => {
 		throw new Error('Input must be a string!');
 	}
 	const regex = /JavaScript/;
-	return regex.test(input);
+	const result = regex.test(input);
+	return result;
 };
 
 // Validate Email Address
@@ -15,7 +16,8 @@ const validateEmail = (input) => {
 		throw new Error('Input must be a string!');
 	}
 	const regex = /^[^@\s]+@[^\s@]+\.[^\s@]+$/i;
-	return regex.test(input);
+	const result = regex.test(input);
+	return result;
 };
 
 // Extract Numbers
