@@ -20,7 +20,11 @@ const validateEmail = (input) => {
 
 // Extract Numbers
 // Example: "abc123def456" -> ["123", "456"]; "no numbers" -> []
-const extractNumbers = () => {};
+const extractNumbers = (input) => {
+	const regex = /\d+/g
+	const matches = input.match(regex)
+	return matches ? matches: [];
+};
 
 // Replace Whitespace
 // Example: "Hello World" -> "Hello_World"; "a b c" -> "a_b_c"
@@ -93,7 +97,7 @@ const validateUSAddress = () => {};
 module.exports = {
     matchJavaScript,
     validateEmail,
-    // extractNumbers,
+    extractNumbers,
     // replaceWhitespace,
     // validatePhoneNumber,
     // extractHexColors,
