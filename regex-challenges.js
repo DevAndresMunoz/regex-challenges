@@ -10,7 +10,13 @@ const matchJavaScript = (input) => {
 
 // Validate Email Address
 // Example: "test@example.com" -> true; "invalid-email" -> false
-const validateEmail = () => {};
+const validateEmail = (input) => {
+	if (typeof input !== 'string') {
+		throw new Error('Input must be a string!');
+	}
+	const regex = /^[^@\s]+@[^\s@]+\.[^\s@]+$/i;
+	return regex.test(input);
+};
 
 // Extract Numbers
 // Example: "abc123def456" -> ["123", "456"]; "no numbers" -> []
@@ -86,7 +92,7 @@ const validateUSAddress = () => {};
 
 module.exports = {
     matchJavaScript,
-    // validateEmail,
+    validateEmail,
     // extractNumbers,
     // replaceWhitespace,
     // validatePhoneNumber,
