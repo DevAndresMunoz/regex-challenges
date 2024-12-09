@@ -89,10 +89,11 @@ describe('Regex Challenges', () => {
         expect(() => matchJavaScript(123)).toThrow('Input must be a string!');
     });
 
-    // test('Match HTML tags', () => {
-    //     expect(matchHtmlTags('<div><p>Hello</p></div>')).toEqual(['<div>', '<p>', '</p>', '</div>']);
-    //     expect(matchHtmlTags('No tags here')).toEqual([]);
-    // });
+    test('Match HTML tags', () => {
+        expect(matchHtmlTags('<div><p>Hello</p></div>')).toEqual(['<div>', '<p>', '</p>', '</div>']);
+        expect(matchHtmlTags('No tags here')).toEqual([]);
+        expect(() => matchJavaScript(123)).toThrow('Input must be a string!');
+    });
 
     // test('Find capitalized words', () => {
     //     expect(findCapitalizedWords('Hello World')).toEqual(['Hello', 'World']);
