@@ -133,7 +133,7 @@ const matchRepeatedWords = (input) => {
 	if (typeof input !== 'string') {
 		throw new Error('Input must be a string!');
 	}
-	const regex = /\b(\w+)\b\s+\1\b/g;
+	const regex = /\b(\w+)\b\s\1\b/g;
 	const result = input.match(regex);
 	return result ? result : [];
 };
