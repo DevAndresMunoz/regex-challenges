@@ -170,7 +170,14 @@ const validateCreditCard = (input) => {
 
 // Replace Non-Word Characters
 // Example: "hello world!" -> "hello-world-"; "Hello@World" -> "Hello-World"
-const replaceNonWordChars = () => {};
+const replaceNonWordChars = (input) => {
+	if (typeof input !== 'string') {
+		throw new Error('Input must be a string!');
+	}
+	const regex = /[\s?!@#$%^&*]/g;
+	const newStr = input.replace(regex, "-");
+	return newStr;
+};
 
 // Split by Multiple Delimiters
 // Example: "a,b|c;d" -> ["a", "b", "c", "d"]; "one|two;three,four" -> ["one", "two", "three", "four"]
@@ -201,7 +208,7 @@ module.exports = {
     validatePassword,
     matchUnicodeChars,
     validateCreditCard,
-    // replaceNonWordChars,
+    replaceNonWordChars,
     // splitByDelimiters,
     // checkMultilineStart,
     // validateUSAddress,
