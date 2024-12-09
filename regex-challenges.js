@@ -151,7 +151,11 @@ const validatePassword = (input) => {
 
 // Match Unicode Characters
 // Example: "😀" -> ["😀"]; "abcABC" -> ["a", "b", "c", "A", "B", "C"]
-const matchUnicodeChars = () => {};
+const matchUnicodeChars = (input) => {
+	const regex = /\p{Emoji}|\p{L}|\p{N}/gu;
+	const result = input.match(regex);
+	return result;
+};
 
 // Validate Credit Card Numbers
 // Example: "1234-5678-9012-3456" -> true; "1234-5678" -> false
@@ -188,7 +192,7 @@ module.exports = {
     findCapitalizedWords,
     matchRepeatedWords,
     validatePassword,
-    // matchUnicodeChars,
+    matchUnicodeChars,
     // validateCreditCard,
     // replaceNonWordChars,
     // splitByDelimiters,

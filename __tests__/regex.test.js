@@ -115,10 +115,10 @@ describe('Regex Challenges', () => {
         expect(() => matchJavaScript(123)).toThrow('Input must be a string!');
     });
 
-    // test('Match Unicode characters', () => {
-    //     expect(matchUnicodeChars('😀')).toEqual(['😀']);
-    //     expect(matchUnicodeChars('abcABC')).toEqual(['a', 'b', 'c', 'A', 'B', 'C']);
-    // });
+    test('Match Unicode characters', () => {
+        expect(matchUnicodeChars('😀')).toEqual(['😀']);
+        expect(matchUnicodeChars('abcABC')).toEqual(['a', 'b', 'c', 'A', 'B', 'C']);
+    });
 
     // test('Validate credit card numbers', () => {
     //     expect(validateCreditCard('1234-5678-9101-1121')).toBe(true);
