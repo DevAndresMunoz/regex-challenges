@@ -134,10 +134,11 @@ describe('Regex Challenges', () => {
         expect(() => matchJavaScript(123)).toThrow('Input must be a string!');
     });
 
-    // test('Split by multiple delimiters', () => {
-    //     expect(splitByDelimiters('a,b|c;d')).toEqual(['a', 'b', 'c', 'd']);
-    //     expect(splitByDelimiters('one|two,three;four')).toEqual(['one', 'two', 'three', 'four']);
-    // });
+    test('Split by multiple delimiters', () => {
+        expect(splitByDelimiters('a,b|c;d')).toEqual(['a', 'b', 'c', 'd']);
+        expect(splitByDelimiters('one|two,three;four')).toEqual(['one', 'two', 'three', 'four']);
+        expect(() => matchJavaScript(123)).toThrow('Input must be a string!');
+    });
 
     // test('Check multiline start', () => {
     //     expect(checkMultilineStart('hello\nworld\nhello')).toEqual(['hello', 'hello']);
