@@ -128,10 +128,11 @@ describe('Regex Challenges', () => {
         expect(() => matchJavaScript(123)).toThrow('Input must be a string!');
     });
 
-    // test('Replace non-word characters', () => {
-    //     expect(replaceNonWordChars('hello world!')).toBe('hello-world-');
-    //     expect(replaceNonWordChars('Hello@World')).toBe('Hello-World');
-    // });
+    test('Replace non-word characters', () => {
+        expect(replaceNonWordChars('hello world!')).toBe('hello-world-');
+        expect(replaceNonWordChars('Hello@World')).toBe('Hello-World');
+        expect(() => matchJavaScript(123)).toThrow('Input must be a string!');
+    });
 
     // test('Split by multiple delimiters', () => {
     //     expect(splitByDelimiters('a,b|c;d')).toEqual(['a', 'b', 'c', 'd']);
