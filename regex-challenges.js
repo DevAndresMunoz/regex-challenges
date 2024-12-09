@@ -118,7 +118,14 @@ const matchHtmlTags = (input) => {
 
 // Find Capitalized Words
 // Example: "Hello World" -> ["Hello", "World"]; "no caps" -> []
-const findCapitalizedWords = () => {};
+const findCapitalizedWords = (input) => {
+	if (typeof input !== 'string') {
+		throw new Error('Input must be a string!');
+	}
+	const regex = /[A-Z]{1}\w+/g;
+	const result = input.match(regex);
+	return result ? result : [];
+};
 
 // Match Repeated Words
 // Example: "This is is a test test" -> ["is is", "test test"]; "no repeats" -> []
@@ -164,7 +171,7 @@ module.exports = {
     countVowels,
     extractDomain,
     matchHtmlTags,
-    // findCapitalizedWords,
+    findCapitalizedWords,
     // matchRepeatedWords,
     // validatePassword,
     // matchUnicodeChars,
