@@ -80,14 +80,14 @@ describe('Regex Challenges', () => {
         expect(countVowels('HELLO')).toBe(2); // Case-insensitivity check
         expect(countVowels('xyz')).toBe(0);
         expect(() => matchJavaScript(123)).toThrow('Input must be a string!');
-
     });
 
-    // test('Extract domain names', () => {
-    //     expect(extractDomain('test@example.com')).toBe('example.com');
-    //     expect(extractDomain('TEST@EXAMPLE.COM')).toBe('EXAMPLE.COM'); // Ensure case preservation
-    //     expect(extractDomain('invalid')).toBe(null);
-    // });
+    test('Extract domain names', () => {
+        expect(extractDomain('test@example.com')).toBe('example.com');
+        expect(extractDomain('TEST@EXAMPLE.COM')).toBe('EXAMPLE.COM'); // Ensure case preservation
+        expect(extractDomain('invalid')).toBe(null);
+        expect(() => matchJavaScript(123)).toThrow('Input must be a string!');
+    });
 
     // test('Match HTML tags', () => {
     //     expect(matchHtmlTags('<div><p>Hello</p></div>')).toEqual(['<div>', '<p>', '</p>', '</div>']);
