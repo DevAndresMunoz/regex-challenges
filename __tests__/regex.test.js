@@ -102,10 +102,11 @@ describe('Regex Challenges', () => {
         expect(() => matchJavaScript(123)).toThrow('Input must be a string!');
     });
 
-    // test('Match repeated words', () => {
-    //     expect(matchRepeatedWords('This is is a test Test')).toEqual(['is is']); // Case-sensitivity check
-    //     expect(matchRepeatedWords('No repeats here')).toEqual([]);
-    // });
+    test('Match repeated words', () => {
+        expect(matchRepeatedWords('This is is a test Test')).toEqual(['is is']); // Case-sensitivity check
+        expect(matchRepeatedWords('No repeats here')).toEqual([]);
+        expect(() => matchJavaScript(123)).toThrow('Input must be a string!');
+    });
 
     // test('Validate password', () => {
     //     expect(validatePassword('Password1')).toBe(true);
