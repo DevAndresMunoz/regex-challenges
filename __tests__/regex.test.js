@@ -108,11 +108,12 @@ describe('Regex Challenges', () => {
         expect(() => matchJavaScript(123)).toThrow('Input must be a string!');
     });
 
-    // test('Validate password', () => {
-    //     expect(validatePassword('Password1')).toBe(true);
-    //     expect(validatePassword('password')).toBe(false);
-    //     expect(validatePassword('PASSWORD1')).toBe(false); // Must include lowercase
-    // });
+    test('Validate password', () => {
+        expect(validatePassword('Password1')).toBe(true);
+        expect(validatePassword('password')).toBe(false);
+        expect(validatePassword('PASSWORD1')).toBe(false); // Must include lowercase
+        expect(() => matchJavaScript(123)).toThrow('Input must be a string!');
+    });
 
     // test('Match Unicode characters', () => {
     //     expect(matchUnicodeChars('😀')).toEqual(['😀']);

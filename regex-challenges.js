@@ -140,7 +140,14 @@ const matchRepeatedWords = (input) => {
 
 // Validate Password
 // Example: "Password1" -> true; "password" -> false
-const validatePassword = () => {};
+const validatePassword = (input) => {
+	if (typeof input !== 'string') {
+		throw new Error('Input must be a string!');
+	}
+	const regex = /([A-Z]+[a-z]+)|([a-z]+[A-Z]+)/;
+	const result = regex.test(input);
+	return result;
+};
 
 // Match Unicode Characters
 // Example: "😀" -> ["😀"]; "abcABC" -> ["a", "b", "c", "A", "B", "C"]
@@ -180,7 +187,7 @@ module.exports = {
     matchHtmlTags,
     findCapitalizedWords,
     matchRepeatedWords,
-    // validatePassword,
+    validatePassword,
     // matchUnicodeChars,
     // validateCreditCard,
     // replaceNonWordChars,
