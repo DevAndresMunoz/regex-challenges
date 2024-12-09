@@ -120,12 +120,13 @@ describe('Regex Challenges', () => {
         expect(matchUnicodeChars('abcABC')).toEqual(['a', 'b', 'c', 'A', 'B', 'C']);
     });
 
-    // test('Validate credit card numbers', () => {
-    //     expect(validateCreditCard('1234-5678-9101-1121')).toBe(true);
-    //     expect(validateCreditCard('1234 5678 9101 1121')).toBe(true);
-    //     expect(validateCreditCard('1234567891011121')).toBe(true);
-    //     expect(validateCreditCard('12345-6789-1011-121')).toBe(false);
-    // });
+    test('Validate credit card numbers', () => {
+        expect(validateCreditCard('1234-5678-9101-1121')).toBe(true);
+        expect(validateCreditCard('1234 5678 9101 1121')).toBe(true);
+        expect(validateCreditCard('1234567891011121')).toBe(true);
+        expect(validateCreditCard('12345-6789-1011-121')).toBe(false);
+        expect(() => matchJavaScript(123)).toThrow('Input must be a string!');
+    });
 
     // test('Replace non-word characters', () => {
     //     expect(replaceNonWordChars('hello world!')).toBe('hello-world-');
