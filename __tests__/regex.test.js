@@ -95,11 +95,12 @@ describe('Regex Challenges', () => {
         expect(() => matchJavaScript(123)).toThrow('Input must be a string!');
     });
 
-    // test('Find capitalized words', () => {
-    //     expect(findCapitalizedWords('Hello World')).toEqual(['Hello', 'World']);
-    //     expect(findCapitalizedWords('No Caps here')).toEqual(['No', 'Caps']);
-    //     expect(findCapitalizedWords('no caps')).toEqual([]);
-    // });
+    test('Find capitalized words', () => {
+        expect(findCapitalizedWords('Hello World')).toEqual(['Hello', 'World']);
+        expect(findCapitalizedWords('No Caps here')).toEqual(['No', 'Caps']);
+        expect(findCapitalizedWords('no caps')).toEqual([]);
+        expect(() => matchJavaScript(123)).toThrow('Input must be a string!');
+    });
 
     // test('Match repeated words', () => {
     //     expect(matchRepeatedWords('This is is a test Test')).toEqual(['is is']); // Case-sensitivity check
