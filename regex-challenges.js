@@ -192,11 +192,20 @@ const splitByDelimiters = (input) => {
 
 // Check Multiline Start
 // Example: "hello\nworld\nhello" -> ["hello", "hello"]; "Hello\nworld" -> []
-const checkMultilineStart = () => {};
+const checkMultilineStart = (input) => {
+
+};
 
 // Validate U.S. Street Address
 // Example: "123 N Olive Lane\nCity, ST 12345" -> true; "123 Olive Lane, City ST 12345" -> false
-const validateUSAddress = () => {};
+const validateUSAddress = (input) => {
+	if (typeof input !== 'string') {
+		throw new Error('Input must be a string!');
+	}
+	const regex = /^\d+\s[\w\s]+\n[\w\s]+,\s[A-Z]{2}\s\d{5}/;
+	const result = regex.test(input);
+	return result;
+};
 
 module.exports = {
     matchJavaScript,
@@ -217,6 +226,6 @@ module.exports = {
     validateCreditCard,
     replaceNonWordChars,
     splitByDelimiters,
-    // checkMultilineStart,
-    // validateUSAddress,
+    checkMultilineStart,
+    validateUSAddress,
 };

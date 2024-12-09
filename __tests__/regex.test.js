@@ -140,20 +140,21 @@ describe('Regex Challenges', () => {
         expect(() => matchJavaScript(123)).toThrow('Input must be a string!');
     });
 
-    // test('Check multiline start', () => {
-    //     expect(checkMultilineStart('hello\nworld\nhello')).toEqual(['hello', 'hello']);
-    //     expect(checkMultilineStart('Hello\nworld')).toEqual([]);
-    // });
+    test('Check multiline start', () => {
+        expect(checkMultilineStart('hello\nworld\nhello')).toEqual(['hello', 'hello']);
+        expect(checkMultilineStart('Hello\nworld')).toEqual([]);
+    });
 
-    // test('Validate U.S. street address', () => {
-    //     // Valid examples
-    //     expect(validateUSAddress('123 N Olive Lane\nCity, ST 12345')).toBe(true);
-    //     expect(validateUSAddress('456 W Main St\nSomewhere, TX 67890')).toBe(true);
+    test('Validate U.S. street address', () => {
+        // Valid examples
+        expect(validateUSAddress('123 N Olive Lane\nCity, ST 12345')).toBe(true);
+        expect(validateUSAddress('456 W Main St\nSomewhere, TX 67890')).toBe(true);
 
-    //     // Invalid examples
-    //     expect(validateUSAddress('123 Olive Lane, City ST 12345')).toBe(false); // Missing newline
-    //     expect(validateUSAddress('123 Olive Lane\nCity ST 12345')).toBe(false); // Missing comma
-    //     expect(validateUSAddress('123 Olive Lane\nCity, ST')).toBe(false); // Missing ZIP code
-    //     expect(validateUSAddress('Olive Lane\nCity, ST 12345')).toBe(false); // Missing house number
-    // });
+        // Invalid examples
+        expect(validateUSAddress('123 Olive Lane, City ST 12345')).toBe(false); // Missing newline
+        expect(validateUSAddress('123 Olive Lane\nCity ST 12345')).toBe(false); // Missing comma
+        expect(validateUSAddress('123 Olive Lane\nCity, ST')).toBe(false); // Missing ZIP code
+        expect(validateUSAddress('Olive Lane\nCity, ST 12345')).toBe(false); // Missing house number
+        expect(() => matchJavaScript(123)).toThrow('Input must be a string!');
+    });
 });
