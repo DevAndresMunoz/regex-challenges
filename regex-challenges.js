@@ -129,7 +129,14 @@ const findCapitalizedWords = (input) => {
 
 // Match Repeated Words
 // Example: "This is is a test test" -> ["is is", "test test"]; "no repeats" -> []
-const matchRepeatedWords = () => {};
+const matchRepeatedWords = (input) => {
+	if (typeof input !== 'string') {
+		throw new Error('Input must be a string!');
+	}
+	const regex = /\b(\w+)\b\s+\1\b/g;
+	const result = input.match(regex);
+	return result ? result : [];
+};
 
 // Validate Password
 // Example: "Password1" -> true; "password" -> false
@@ -172,7 +179,7 @@ module.exports = {
     extractDomain,
     matchHtmlTags,
     findCapitalizedWords,
-    // matchRepeatedWords,
+    matchRepeatedWords,
     // validatePassword,
     // matchUnicodeChars,
     // validateCreditCard,
